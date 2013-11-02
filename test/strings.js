@@ -153,6 +153,15 @@ $(document).ready(function() {
     equal(_.vsprintf('%(args[0].id)d - %(args[1].name)s', [{args: [{id: 824}, {name: 'Hello World'}]}]), '824 - Hello World', 'Named replacement with arrays works');
   });
 
+  test('Strings: sformat', function() {
+    equal(_.sformat('{0}', 'single'), 'single', 'single');
+    equal(_.sformat('{0} {0}', 'double'), 'double double', 'double');
+    equal(_.sformat('{{0}}', 'unchanged'), '{0}', 'unchanged');
+    equal(_.sformat('{{{0}}}', 'enclosed'), '{enclosed}', 'enclosed');
+    equal(_.sformat('{0} {1}', 'first', 'second'), 'first second', 'ordered');
+    equal(_.sformat('{1} {2}', 'second', 'first'), 'first second', 'reverded');
+  });
+
   test('Strings: startsWith', function() {
     ok(_('foobar').startsWith('foo'), 'foobar starts with foo');
     ok(!_('oobar').startsWith('foo'), 'oobar does not start with foo');
