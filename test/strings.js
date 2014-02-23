@@ -154,12 +154,14 @@ $(document).ready(function() {
   });
 
   test('Strings: sformat', function() {
+    equal(_.sformat('{0}'), '', 'missing');
     equal(_.sformat('{0}', 'single'), 'single', 'single');
     equal(_.sformat('{0} {0}', 'double'), 'double double', 'double');
     equal(_.sformat('{{0}}', 'unchanged'), '{0}', 'unchanged');
     equal(_.sformat('{{{0}}}', 'enclosed'), '{enclosed}', 'enclosed');
     equal(_.sformat('{0} {1}', 'first', 'second'), 'first second', 'ordered');
-    equal(_.sformat('{1} {2}', 'second', 'first'), 'first second', 'reverded');
+    equal(_.sformat('{1} {0}', 'second', 'first'), 'first second', 'reversed');
+    equal(_.sformat('{0}', 1), '1', 'non-string');
   });
 
   test('Strings: startsWith', function() {
