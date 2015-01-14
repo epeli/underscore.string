@@ -9,11 +9,11 @@ for example from [Dive Into JavaScript][d].
 [d]: http://www.diveintojavascript.com/core-javascript-reference/the-string-object
 
 
-As name states this an extension for [Underscore.js][u], but it can be used
+As name states this an extension for [Underscore.js][u] (and [Lo-Dash](http://lodash.com/)), but it can be used
 independently from **_s**-global variable. But with Underscore.js you can
 use Object-Oriented style and chaining:
 
-[u]: http://documentcloud.github.com/underscore/
+[u]: http://underscorejs.org/
 
 ```javascript
 _("   epeli  ").chain().trim().capitalize().value()
@@ -291,16 +291,19 @@ _('my name is epeli').titleize()
 
 **camelize** _.camelize(string)
 
-Converts underscored or dasherized string to a camelized one
+Converts underscored or dasherized string to a camelized one. Begins with
+a lower case letter unless it starts with an underscore or string
 
 ```javascript
+_('moz-transform').camelize()
+=> 'mozTransform'
 _('-moz-transform').camelize()
 => 'MozTransform'
 ```
 
 **classify** _.classify(string)
 
-Converts string to camelized class name
+Converts string to camelized class name. First letter is always upper case
 
 ```javascript
 _('some_class_name').classify()
@@ -415,7 +418,7 @@ C like string formatting.
 Credits goes to [Alexandru Marasteanu][o].
 For more detailed documentation, see the [original page][o].
 
-[o]: http://www.diveintojavascript.com/projects/sprintf-for-javascript
+[o]: http://www.diveintojavascript.com/projects/javascript-sprintf
 
 ```javascript
 _.sprintf("%.1f", 1.17)
@@ -690,6 +693,13 @@ _ = _.string
 ```
 
 ## Changelog ##
+
+### 2.4.0 ###
+
+* Move from rake to gulp
+* Add support form classify camelcase strings
+* Fix bower.json
+* [Full changelog](https://github.com/epeli/underscore.string/compare/v2.3.3...2.4.0)
 
 ### 2.3.3 ###
 
