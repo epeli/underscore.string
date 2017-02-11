@@ -1,6 +1,9 @@
 
 # Changelog
 
+### patched
+* add sformat method
+
 ### 3.3.4
 * set standalone in browserify `s`
 

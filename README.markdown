@@ -539,6 +539,15 @@ sprintf("%.1f", 1.17);
 // => "1.2"
 ```
 
+#### sformat(string format, ...arguments) => string
+
+String formatting with indexed parameter placeholders, which allows changing their order or repeating them in the format string. This is especially useful when using localized format strings.
+
+```javascript
+sformat("See also: {0} (page {1})", "Architecture", 10)
+"See also: Architecture (page 10)"
+```
+
 #### pad(str, length, [padStr, type]) => string
 
 pads the `str` with characters until the total string length is equal to the passed `length` parameter. By default, pads on the **left** with the space char (`" "`). `padStr` is truncated to a single character if necessary.

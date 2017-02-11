@@ -62,6 +62,7 @@ s.sprintf          = require('./sprintf');
 s.vsprintf         = require('./vsprintf');
 s.toNumber         = require('./toNumber');
 s.numberFormat     = require('./numberFormat');
+s.sformat          = require('./sformat');
 s.strRight         = require('./strRight');
 s.strRightBack     = require('./strRightBack');
 s.strLeft          = require('./strLeft');
