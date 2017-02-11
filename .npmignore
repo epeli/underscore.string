@@ -1,2 +1,4 @@
-test
-dist
+tests
+bench
+coverage
+scripts
